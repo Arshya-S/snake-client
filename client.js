@@ -12,8 +12,15 @@ const connect = function () {
 
   // console log user that they're dead from idling
   conn.on('data', () => {
-    console.log('you ded cuz you idled')
-  })
+    console.log('you ded cuz you idled');
+  });
+
+  conn.on('connect', () => {
+    console.log('Successfully connected to game server.');
+    
+  });
+
+  conn.write('Name: AS');
 
   return conn;
 };
